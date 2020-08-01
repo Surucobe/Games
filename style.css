@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+h3 {
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 560px;
+  height: 560px;
+  border: solid #000;
+  margin: 0 auto;
+}
+
+.grid div {
+  width: 20px;
+  height: 20px;
+}
+
+.pac-dot {
+  background-color: #0f0;
+  border: 5px solid #fff;
+  box-sizing: border-box;
+}
+
+.wall {
+  background-color: #00f;
+}
+
+.power-pellet {
+  background-color: #0f0;
+  border-radius: 10px;
+}
+
+/*css rule for the ghosts*/
+.blinky {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: #f00;
+  border: 0px;
+}
+
+.pinky {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: #ffc0bf;
+  border: 0px;
+}
+
+.inky {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: #00fff0;
+  border: 0px;
+}
+
+.clyde {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: #ffa500;
+  border: 0px;
+}
+
+/* css rule for pac-man */
+.hero {
+  background-color: #ff0;
+  border-radius: 50%;
+}
