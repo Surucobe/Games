@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const scoreDisplay = document.getElementById('score');
   const width = 28; //28 x 28 = 784 squares
   let score = 0;
+  let goal = 274;
 
   const layout = [
     1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
@@ -108,12 +109,13 @@ document.addEventListener('DOMContentLoaded', () => {
     checkForWin();
   }
 
-  document.addEventListener('keydown', movePacman)
+  document.addEventListener('keyup', movePacman)
 
   //what happens when Pac-man eats a pac-dot
   function pacDotEaten() {
     if (squares[pacmanCurrentIndex].classList.contains('pac-dot')) {
       score++;
+      goal--;
       scoreDisplay.innerHTML = score;
       squares[pacmanCurrentIndex].classList.remove('pac-dot');
     }
@@ -209,8 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   //check if you won
   function checkForWin() {
-    debugger
-    if (score >= 274) {
+    if (goal === 0) {
       ghosts.forEach(ghost => clearInterval(ghost.timerId));
       document.removeEventListener('keyup', movePacman);
       scoreDisplay.innerHTML = 'YOU WIN!';
